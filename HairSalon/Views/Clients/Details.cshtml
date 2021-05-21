@@ -1,0 +1,15 @@
+@model HairSalon.Models.Client;
+
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <div class="card">
+    <h3 class="p-2 border-bottom">Client Details - @Model.Name</h3>
+    <div class="container">
+      <p>@Model.ClientId - @Model.Name</p>
+    </div>
+    @Html.ActionLink("Delete Client", "Delete", new { id = Model.ClientId }, new { @class = "btn btn-lg btn-block btn-danger" })
+  </div>
+</div>
