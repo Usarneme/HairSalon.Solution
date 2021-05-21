@@ -8,6 +8,11 @@ a {
   color: unset;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 nav {
   min-height: 44px;
   background: #ddd;
@@ -20,6 +25,10 @@ nav {
 
 nav a {
   margin-left: 10px;
+}
+
+.s-input {
+  padding-left: 5px;
 }
 
 main {
