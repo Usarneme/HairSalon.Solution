@@ -15,10 +15,12 @@
     else
     {
       <div class="container p-2">
-        @foreach (Stylist stylist in Model)
-        {
-          @Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })
-        }
+        <ol>
+          @foreach (Stylist stylist in Model)
+          {
+            <li>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</li>
+          }
+        </ol>
       </div>
     }
 

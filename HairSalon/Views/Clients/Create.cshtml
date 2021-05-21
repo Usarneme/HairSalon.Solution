@@ -1,4 +1,4 @@
-@model HairSalon.Models.Stylist;
+@model HairSalon.Models.Client;
 
 @{
   Layout = "_Layout";
@@ -6,15 +6,19 @@
 
 <div class="container">
   <div class="card">
-    <h3 class="p-2 border-bottom">Add a new Stylist</h3>
+    <h3 class="p-2 border-bottom">Add a new Client</h3>
 
     <div class="container">
       @using (Html.BeginForm())
       {
         @Html.LabelFor(model => model.Name)
         @Html.TextBoxFor(model => model.Name)
+
+        @Html.LabelFor(model => model.Stylist)
+        @Html.DropDownList("StylistId")
+
+        <input type="submit" class="btn btn-block btn-info mt-2 mb-2" value="Add Client" />
       }
-      <input type="submit" class="btn btn-block btn-info mt-2 mb-2" value="Add Stylist" />
     </div>
 
   </div>
