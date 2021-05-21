@@ -5,8 +5,32 @@
 <div class="container">
   <div class="card">
     <h3 class="m-2 mb-5 border-bottom">Search Results For "@ViewBag.Query"</h3>
-    <p class="p-2 mb-0">
-      nada
-    </p>
+    <div class="container p-3 text-center">
+      <h4>Stylists Results:</h4>
+      @if (ViewBag.Stylists == null)
+      {
+        <p class="pr-3 pl-3 mb-3">No Stylist of that name found.</p>
+      }
+      else
+      {
+        <p class="pr-3 pl-3 mb-3">
+          @ViewBag.Stylists.Name
+          @Html.ActionLink("Stylist Details", "Details", "Stylists", new { id = @ViewBag.Stylists.StylistId }, new { @class = "btn btn-lg btn-block btn-info" })
+        </p>
+      }
+      <hr />
+      <h4 class="mt-3">Clients Results:</h4>
+      @if (ViewBag.Clients == null)
+      {
+        <p class="pr-3 pl-3 mb-3">No Client of that name found.</p>
+      }
+      else
+      {
+        <p class="pr-3 pl-3 mb-3">
+          @ViewBag.Clients.Name
+          @Html.ActionLink("Client Details", "Details", "Clients", new { id = @ViewBag.Clients.ClientId }, new { @class = "btn btn-lg btn-block btn-info" })
+        </p>
+      }
+    </div>
   </div>
 </div>
