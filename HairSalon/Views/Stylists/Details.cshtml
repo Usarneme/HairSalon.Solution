@@ -1,0 +1,28 @@
+@using HairSalon.Models;
+
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+  <div class="card">
+    <h3 class="p-2 border-bottom">Stylist Details - @Model["stylist"].Name</h3>
+
+    <div class="container">
+      @if (@Model["stylist"].Clients.Count == 0)
+      {
+        <h4 class="p-3">No Clients At This Time</h4>
+      }
+      else
+      {
+        <ol>
+          @foreach (Client client in @Model["stylist"].Clients)
+          {
+            <li><a href='/categories/@Model["stylist"].CategoryId/items/@client.ClientId'>@client.Name</a></li>
+          }
+        </ol>
+      }
+    </div>
+  </div>
+  @* <p><a href='/categories/@Model["stylist"].StylistId/clients/create' class="btn btn-block btn-info btn-lg">Add a new client</a></p> *@
+</div>
