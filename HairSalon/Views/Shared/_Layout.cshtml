@@ -9,9 +9,12 @@
   <body>
     <nav>
       @Html.ActionLink("Home", "Index", "Home")
-      @* TODO nav links *@
+      @Html.ActionLink("Stylists", "Index", "Stylists")
+      @Html.ActionLink("Clients", "Index", "Clients")
     </nav>
-    <main>
+    <main class="container-fluid">
+      <h1 class="pt-3">Welcome, Claire</h1>
+      <h3 class="pb-3">Eau Claire's Hair Salon - Administration</h3>
       @RenderBody()
     </main>
   </body>

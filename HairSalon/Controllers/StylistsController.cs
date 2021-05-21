@@ -4,7 +4,7 @@ namespace HairSalon.Controllers
 {
   public class StylistsController : Controller
   {
-    [HttpGet("/")]
+    [HttpGet("/stylists")]
     public ActionResult Index() { return View(); }
   }
 }
