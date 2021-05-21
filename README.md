@@ -24,9 +24,18 @@ This project is an MVC web app used for administering Eau Claire's hair salon. I
 1. Clone this repository via `git clone https://github.com/Usarneme/HairSalon.Solution`
 2. Enter the newly created repository directory via `cd HairSalon.Solution/`
 3. Enter the project directory `cd HairSalon/` and install requirements via `dotnet restore`
-4. Follow Database Setup Instructions (see below)
-5. From within the `HairSalon/` project directory, first run `dotnet build` then `dotnet run`
-6. In your web browser, navigate to http://localhost:5000/ to view the web app!
+4. Create a file to store your database access string/secrets `touch appsettings.json`
+5. Follow Database Setup Instructions (see below)
+6. Edit appsettings.json to include access information for the newly-created database; for example:
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;database=hair_salon;uid=[your mysql username];pwd=[your mysql password];"
+  }
+}
+```
+7. From within the `HairSalon/` project directory, first run `dotnet build` then `dotnet run`
+8. In your web browser, navigate to http://localhost:5000/ to view the web app!
 
 NOTE: If you get a security error when accessing the web app this is because this is a learning project using a self-signed cert. Please bypass this using your browser's typical method (eg: in Firefox click on Advanced, then I Accept the Risk to take you to the site)
 
