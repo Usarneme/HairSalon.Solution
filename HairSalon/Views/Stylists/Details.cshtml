@@ -24,5 +24,8 @@
       }
     </div>
   </div>
-  @* <p><a href='/categories/@Model["stylist"].StylistId/clients/create' class="btn btn-block btn-info btn-lg">Add a new client</a></p> *@
+  <p>
+    @Html.ActionLink("Add a new Client", "Create", "Clients", null, new { @class = "btn btn-info btn-block btn-lg" })
+    @Html.ActionLink("Delete this Stylist", "Delete", "Stylists", new { id = @Model["stylist"].StylistId }, new { @class = "btn btn-info btn-block btn-lg btn-danger mt-0 delete-button" })
+  </p>
 </div>
