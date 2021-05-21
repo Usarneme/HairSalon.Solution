@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 using HairSalon.Models;
 namespace HairSalon.Controllers
 {
@@ -26,7 +27,9 @@ namespace HairSalon.Controllers
     [HttpGet("/clients/create")]
     public ActionResult Create()
     {
+      var stylistsCount = _db.Stylists.ToList().Count;
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+      ViewBag.stylistsCount = stylistsCount;
       return View();
     }
 
